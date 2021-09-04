@@ -1,0 +1,68 @@
+body {
+    background: #204020;
+    color: #404040;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+}
+
+.clearfix {
+    clear: both;
+}
+
+#box {
+    width: 400px;
+    overflow: auto;
+    margin: 40px auto;
+    background: #208020;
+    padding-bottom: 40px;
+    border-radius: 10px;
+}
+
+#message {
+    background: #F00;
+    color: #fff;
+    font-size: 20px;
+}
+
+.cell {
+    float: left;
+    margin: 5px;
+    height: 100px;
+    width: 100px;
+    font-size: 80px;
+    background: #444;
+    color: #cce;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.cell:hover, #reset:hover {
+    cursor: pointer;
+    background: #000;
+}
+
+#reset {
+    border: 0;
+    background: #444;
+    color: #fff;
+    width: 70%;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.o {
+    color: green !important;
+}
+
+.x {
+    color: red !important;
+}
+
+footer {
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Tic Tac Toe Game</title>
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!--    libs for stomp and sockjs-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <!--    end libs for stomp and sockjs-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+<body>
+<div class="text-center" id="box">
+    <header>
+        <h1>Play Tic Tac Toe</h1>
+    </header>
+
+    <div id="pl0">
+        <b style="color:#fff">X</b> <input type="text" id="player1" value="Player1">
+        <select id="player1type">
+            <option value="HUMAN" selected>Human</option>
+            <option value="AI">Ai</option>
+        </select>
+        <span id="win1"></span>
+    </div>
+    <div id="pl1">
+        <b style="color:#fff">O</b> <input type="text" id="player2" value="Player2">
+        <select id="player2type">
+            <option value="HUMAN">Human</option>
+            <option value="AI" selected>Ai</option>
+        </select>
+        <span id="win2"></span>
+    </div>
+    <input type="button" name="submit" value="Start Game" onclick="startGame()">
+    <br>
+    <br>
+
+    <table id="gameBoard" bgcolor="0" align="center">
+        <tr>
+            <td class=cell id="T00" onclick="move(00)"><div id="D00"></div></td>
+            <td class=cell id="T01" onclick="move(01)"><div id="D01"></div></td>
+            <td class=cell id="T02" onclick="move(02)"><div id="D02"></div></td>
+        </tr><tr>
+            <td class=cell id="T10" onclick="move(10)"><div id="D10"></div></td>
+            <td class=cell id="T11" onclick="move(11)"><div id="D11"></div></td>
+            <td class=cell id="T12" onclick="move(12)"><div id="D12"></div></td>
+        </tr><tr>
+            <td class=cell id="T20" onclick="move(20)"><div id="D20"></div></td>
+            <td class=cell id="T21" onclick="move(21)"><div id="D21"></div></td>
+            <td class=cell id="T22" onclick="move(22)"><div id="D22"></div></td>
+        </tr>
+    </table>
+
+    <div class="clearfix"></div>
+    <br>
+    <div id="message"> </div>
+
+
+</div>
+<script src="js/script.js"></script>
+<script src="js/socket.js"></script>
+</body>
+</html>
