@@ -33,7 +33,7 @@ function displayResponse(data) {
         $("#message").text("Winner is " + data.status.winner);
     }else{
         if (data.status.boardFull) {
-            $("#message").text("It is TIE!");
+            $("#message").text("It's TIE!");
         }
     }
     $("#win1").text(data.score.pl1Win);
