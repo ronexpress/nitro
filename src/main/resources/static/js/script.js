@@ -31,9 +31,10 @@ function displayResponse(data) {
     }
     if (data.status.hasWinner) {
         $("#message").text("Winner is " + data.status.winner);
-    }
-    if (data.status.boardFull) {
-        $("#message").text("It is TIE!");
+    }else{
+        if (data.status.boardFull) {
+            $("#message").text("It is TIE!");
+        }
     }
     $("#win1").text(data.score.pl1Win);
     $("#win2").text(data.score.pl2Win);
