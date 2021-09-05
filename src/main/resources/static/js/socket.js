@@ -65,7 +65,6 @@ function move(place) {
     if(ready){
         let x = place / 10;
         let y = place % 10;
-        //alert("READY "+x+":"+y);
         $.ajax({
             url: url + "/game/move",
             type: 'POST',
