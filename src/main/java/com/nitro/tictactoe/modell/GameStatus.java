@@ -12,5 +12,5 @@ public class GameStatus {
     private boolean ready;
     private boolean boardFull;
     private boolean hasWinner;
-    private char winner=' ';
+    private char winner = ' ';
 }
