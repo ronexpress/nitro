@@ -1,26 +1,4 @@
 
-function makeAMove(type, xCoordinate, yCoordinate) {
-    $.ajax({
-        url: url + "/game/gameplay",
-        type: 'POST',
-        dataType: "json",
-        contentType: "application/json",
-        data: JSON.stringify({
-            "type": type,
-            "coordinateX": xCoordinate,
-            "coordinateY": yCoordinate,
-            "gameId": gameId
-        }),
-        success: function (data) {
-            gameOn = false;
-            displayResponse(data);
-        },
-        error: function (error) {
-            console.log(error);
-        }
-    })
-}
-
 function displayResponse(data) {
     let board = data.board.board;
     for (let i = 0; i < 3; i++) {
