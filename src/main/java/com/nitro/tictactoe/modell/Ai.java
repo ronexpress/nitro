@@ -1,6 +1,5 @@
 package com.nitro.tictactoe.modell;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -43,29 +42,24 @@ public class Ai {
         Matcher matcher = pattern.matcher(boardVector);
         if (matcher.find()) {
             int pos = matcher.start();
-            System.out.println("----TALÁLAT:" + pos + "(" + matcher.group() + ")" + " : " + boardVector);
             if (pos < 12) {
                 ret[0] = (int) pos / 4;
                 ret[1] = matcher.group().indexOf(" ");
-                log.info("12<---" + ret[0] + ":" + ret[1]);
                 return true;
             }
             if (pos < 24) {
                 ret[0] = matcher.group().indexOf(" ");
                 ret[1] = (int) (pos - 12) / 4;
-                log.info("24<---" + ret[0] + ":" + ret[1]);
                 return true;
             }
             if (pos == 24) {
                 ret[0] = matcher.group().indexOf(" ");
                 ret[1] = matcher.group().indexOf(" ");
-                log.info("24=---" + ret[0] + ":" + ret[1]);
                 return true;
             }
             if (pos == 28) {
                 ret[0] = matcher.group().indexOf(" ");
                 ret[1] = 2 - matcher.group().indexOf(" ");
-                log.info("128=---" + ret[0] + ":" + ret[1]);
                 return true;
             }
         }
