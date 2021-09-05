@@ -1,6 +1,6 @@
 body {
-    background: #204020;
-    color: #404040;
+    background: #203020;
+    font-weight: bold;
 }
 
 h1 {
@@ -8,16 +8,21 @@ h1 {
     color: #fff;
 }
 
-.clearfix {
-    clear: both;
+.inpbg {
+    //background: #555;
+    //border: solid 1px;
+    color: #222;
+    height: 22px;
+    margin-top: 2px;
+    margin-top: 2px;
 }
 
-#box {
+#box,#inp {
     width: 400px;
     overflow: auto;
     margin: 40px auto;
-    background: #208020;
-    padding-bottom: 40px;
+    background: #207020;
+    padding-bottom: 20px;
     border-radius: 10px;
 }
 
@@ -39,30 +44,17 @@ h1 {
     border-radius: 5px;
 }
 
-.cell:hover, #reset:hover {
+.cell:hover {
     cursor: pointer;
-    background: #000;
+    background: #222;
 }
 
-#reset {
-    border: 0;
-    background: #444;
-    color: #fff;
-    width: 70%;
-    padding: 15px;
-    border-radius: 5px;
-}
 
-.o {
-    color: green !important;
-}
 
-.x {
-    color: red !important;
-}
-
-footer {
+.footer {
     display: block;
     text-align: center;
-    padding-top: 20px;
+    font-weight: bold;
+    color: #fff;
+    padding-top: 10px;
 }

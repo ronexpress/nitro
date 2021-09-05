@@ -16,32 +16,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
-<body>
-<div class="text-center" id="box">
+
+<div class="text-center" id="inp">
     <header>
         <h1>Play Tic Tac Toe</h1>
     </header>
 
     <div id="pl0">
-        <b style="color:#fff">X</b> <input type="text" id="player1" value="Player1">
-        <select id="player1type">
+        <b style="color:#fff">X</b> <input type="text" id="player1" value="Player1" class="inpbg">
+        <select id="player1type" class="inpbg">
             <option value="HUMAN" selected>Human</option>
             <option value="AI">Ai</option>
         </select>
-        <span id="win1"></span>
+        Win: <span id="win1"></span>
     </div>
     <div id="pl1">
-        <b style="color:#fff">O</b> <input type="text" id="player2" value="Player2">
-        <select id="player2type">
+        <b style="color:#fff">O</b> <input type="text" id="player2" value="Player2" class="inpbg">
+        <select id="player2type" class="inpbg">
             <option value="HUMAN">Human</option>
             <option value="AI" selected>Ai</option>
         </select>
-        <span id="win2"></span>
+        Win: <span id="win2"></span>
     </div>
-    <input type="button" name="submit" value="Start Game" onclick="startGame()">
-    <br>
-    <br>
+    Tie:<span id="tie"></span> &nbsp; &nbsp;
+    <input type="button" name="submit" value="Start Game" onclick="startGame()" style="color: #0">
+    <br><br>
+    <span><small>Fill the names, and press Start Game button</small></span>
+</div>
 
+<div class="text-center" id="box">
+    <br>
     <table id="gameBoard" bgcolor="0" align="center">
         <tr>
             <td class=cell id="T00" onclick="move(00)"><div id="D00"></div></td>
@@ -58,9 +62,11 @@
         </tr>
     </table>
 
-    <div class="clearfix"></div>
+
     <br>
     <div id="message"> </div>
+    <br>
+    <div class="footer">ICSW</div>
 
 
 </div>
