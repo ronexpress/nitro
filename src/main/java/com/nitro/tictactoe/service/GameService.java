@@ -50,14 +50,6 @@ public class GameService {
         return gameStatus;
     }
 
-    public Board getBoard() {
-        return game.getBoard();
-    }
-
-    public List<Player> getPlayers() {
-        return new ArrayList<Player>(List.of(game.getPlayer1(), game.getPlayer2()));
-    }
-
     public Game makeMove(int i, int j) {
         if (game == null) {
             return null;
