@@ -27,6 +27,7 @@ public class GameController {
     @PostMapping("/move")
     public ResponseEntity<Game> makeMove(@RequestBody int[] coor) {
         log.info(">Make move: " + coor[0] + " - " + coor[1]);
-        return ResponseEntity.ok(gameService.makeMove(coor[0], coor[1]));
+        gameService.makeMove(coor[0], coor[1]);
+        return ResponseEntity.ok(gameService.makeAiMove());
     }
 }

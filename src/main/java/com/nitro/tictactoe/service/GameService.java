@@ -1,10 +1,7 @@
 package com.nitro.tictactoe.service;
 
 import com.nitro.tictactoe.DAO.GameDaoJdbc;
-import com.nitro.tictactoe.modell.Board;
-import com.nitro.tictactoe.modell.Game;
-import com.nitro.tictactoe.modell.Player;
-import com.nitro.tictactoe.modell.GameStatus;
+import com.nitro.tictactoe.modell.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -73,6 +70,19 @@ public class GameService {
         countWins();
         getStatus();
 
+        return game;
+    }
+
+    public Game makeAiMove() {
+        if (game.getStatus().isReady()) {
+            Player player = game.getActualPlayer() == 0 ? game.getPlayer1() : game.getPlayer2();
+            if (player.getType() == PlayerType.AI) {
+                Ai ai = new Ai( game.getActualPlayer(), game.getBoard());
+                int[] coor = ai.nextMove();
+                log.info("AiMove:" + coor[0] + ":" + coor[1]);
+                return makeMove(coor[0], coor[1]);
+            }
+        }
         return game;
     }
 
