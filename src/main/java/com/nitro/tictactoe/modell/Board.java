@@ -26,19 +26,19 @@ public class Board {
         }
     }
 
-    public boolean addMove(int i,int j,char playerSign){
-        if(hasWinner() != ' ') {
+    public boolean addMove(int i, int j, char playerSign) {
+        if (hasWinner() != ' ') {
             log.info("Not allow this move!");
             return false;
         }
-        if(board[i][j] == ' ') {
+        if (board[i][j] == ' ') {
             board[i][j] = playerSign;
             return true;
         }
         return false;
     }
 
-    public char getPos(int i, int j){
+    public char getPos(int i, int j) {
         return board[i][j];
     }
 
@@ -74,16 +74,16 @@ public class Board {
         }
         boardVector.append(',');
         for (int i = 0; i < 3; i++) {
-            boardVector.append(board[i][2-i]);
+            boardVector.append(board[i][2 - i]);
         }
 
         Pattern pattern = Pattern.compile("XXX");
-        if(pattern.matcher(boardVector).find()){
+        if (pattern.matcher(boardVector).find()) {
             log.info(">Winner X");
             return 'X';
         }
         pattern = Pattern.compile("OOO");
-        if(pattern.matcher(boardVector).find()){
+        if (pattern.matcher(boardVector).find()) {
             log.info(">Winner O");
             return 'O';
         }

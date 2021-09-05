@@ -14,8 +14,6 @@ public class Player {
 
     private String name;
     private PlayerType type;
-    private int win;
-    private int tie;
 
     @JsonIgnore
     private Board board;
@@ -59,7 +57,7 @@ public class Player {
         do {
             x = random.nextInt(3);
             y = random.nextInt(3);
-        } while (board.getPos(x,y) != ' ');
+        } while (board.getPos(x, y) != ' ');
         return true;
     }
 
@@ -67,22 +65,22 @@ public class Player {
     public void makeBoardVector() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                boardVector.append(board.getPos(i,j));
+                boardVector.append(board.getPos(i, j));
             }
             boardVector.append(',');
         }
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                boardVector.append(board.getPos(j,i));
+                boardVector.append(board.getPos(j, i));
             }
             boardVector.append(',');
         }
         for (int i = 0; i < 3; i++) {
-            boardVector.append(board.getPos(i,i));
+            boardVector.append(board.getPos(i, i));
         }
         boardVector.append(',');
         for (int i = 0; i < 3; i++) {
-            boardVector.append(board.getPos(i,2 - i));
+            boardVector.append(board.getPos(i, 2 - i));
         }
     }
 }
