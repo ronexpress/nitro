@@ -1,0 +1,1 @@
+docker run --name tictactoeimg --rm -dp 8080:8080 tictactoe
